@@ -8,8 +8,16 @@
     <artifactId>qingcheng_parent</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
+        <!--公共-->
         <module>qingcheng_common</module>
+        <!--公共服务-->
         <module>qingcheng_common_service</module>
+        <!--公共web-->
+        <module>qingcheng_common_web</module>
+        <!--实体-->
+        <module>qingcheng_pojo</module>
+        <!--业务接口-->
+        <module>qingcheng_interface</module>
     </modules>
     <packaging>pom</packaging>
 
