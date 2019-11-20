@@ -102,6 +102,7 @@
                 <artifactId>junit</artifactId>
                 <version>4.12</version>
             </dependency>
+            <!--fastjson-->
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
@@ -117,6 +118,7 @@
                 <artifactId>commons-codec</artifactId>
                 <version>1.10</version>
             </dependency>
+            <!--分页插件-->
             <dependency>
                 <groupId>com.github.pagehelper</groupId>
                 <artifactId>pagehelper</artifactId>
