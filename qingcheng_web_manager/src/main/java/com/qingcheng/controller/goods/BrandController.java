@@ -23,10 +23,10 @@ public class BrandController {
     }
 
 
-    @PostMapping("/findname")
+    /*@PostMapping("/findname")
     public List<Brand> find(){
         return brandService.findname();
-    }
+    }*/
 
     /*@GetMapping("/findPage")
     public PageResult<Brand> findPage(int page, int size){
