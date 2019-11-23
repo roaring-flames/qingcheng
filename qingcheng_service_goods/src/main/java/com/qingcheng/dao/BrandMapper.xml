@@ -15,11 +15,10 @@
         所以直接写User就行。
         如果不声明：必须写全 com.example.ssmspringboot.domain.User
         -->
-    <select id="findAll" resultMap="baseResultMap">
+    <select id="all" resultMap="baseResultMap">
         select *
         from tb_brand
     </select>
-
    <!-- <select id="findname" resultMap="baseResultMap">
         select *
         from tb_brand

@@ -1,14 +1,13 @@
 package com.qingcheng.dao;
 
 import com.qingcheng.pojo.goods.Brand;
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import tk.mybatis.mapper.common.Mapper;
 
 import java.util.List;
 import java.util.Map;
-@Mapper
-public interface BrandMapper  {
+public interface BrandMapper extends Mapper<Brand> {
 
 
 
@@ -18,7 +17,7 @@ public interface BrandMapper  {
             ") order by seq")
     public List<Map> findListByCategoryName(@Param("name") String categoryName);*/
 
-    List<Brand> findAll();
+    List<Brand> all();
 
    /* List<Brand> findname();
 */

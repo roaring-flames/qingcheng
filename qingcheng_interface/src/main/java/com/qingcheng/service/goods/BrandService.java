@@ -18,7 +18,7 @@ public interface BrandService {
      */
     List<Brand> findAll();
 
-   /* List<Brand> findname();*/
+    List<Brand> all();
 
 
     /**

@@ -1,4 +1,5 @@
 package com.qingcheng.service.impl;
+
 import com.alibaba.dubbo.config.annotation.Service;
 import com.qingcheng.dao.BrandMapper;
 import com.qingcheng.pojo.goods.Brand;
@@ -15,17 +16,18 @@ public class BrandServiceImpl implements BrandService {
 
     /**
      * 返回全部记录
+     *
      * @return
      */
     public List<Brand> findAll() {
-        return brandMapper.findAll();
+        return brandMapper.selectAll();
     }
 
-   /* @Override
-    public List<Brand> findname() {
+    @Override
+    public List<Brand> all() {
 
-        return  brandMapper.findname();
-    }*/
+        return brandMapper.all();
+    }
 
 
 }
