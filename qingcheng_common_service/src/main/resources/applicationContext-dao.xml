@@ -30,8 +30,8 @@
 			</array>
 		</property>
 	</bean>
-	<!--mybatis配置（注意使用的是通用mapper）-->
-	<bean class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
+	<!--mybatis配置-->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage" value="com.qingcheng.dao" />
 	</bean>
 

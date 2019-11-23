@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qingcheng.dao.BrandMapper">
+    <resultMap id="baseResultMap" type="com.qingcheng.pojo.goods.Brand">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="image" jdbcType="VARCHAR" property="image"/>
+        <result column="letter" jdbcType="VARCHAR" property="letter"/>
+        <result column="seq" jdbcType="INTEGER" property="seq"/>
+    </resultMap>
+
+
+    <!--由于application.properties配置文件中，声明了实体类在哪个包下
+        所以直接写User就行。
+        如果不声明：必须写全 com.example.ssmspringboot.domain.User
+        -->
+    <select id="findAll" resultMap="baseResultMap">
+        select *
+        from tb_brand
+    </select>
+
+   <!-- <select id="findname" resultMap="baseResultMap">
+        select *
+        from tb_brand
+    </select>-->
+
+
+    <!-- <select id="findByUsername" resultType="User">
+         SELECT *
+         FROM user
+         WHERE username = #{username}
+     </select>-->
+    <!--   <resultMap id="userMap" type="com.example.domain.User">
+           <result property="username" column="username" javaType="java.lang.String"></result>
+           <result property="password" column="password" javaType="java.lang.String"></result>
+       </resultMap>
+       <select id="findAll" resultMap="userMap">
+           select *
+           from user
+       </select>
+       <delete id="delUser" parameterType="com.example.domain.User">
+           delete
+           from user
+           where username = #{username}
+       </delete>
+       <insert id="addUser" parameterType="com.example.domain.User">
+           insert into user (username, password)
+           values (#{username}, #{password})
+       </insert>
+       <update id="updateUser" parameterType="com.example.domain.User">
+       update user
+       set username=#{username},
+           password=#{password}
+       where username = #{username}
+   </update>&ndash;&gt;-->
+
+    <!-- <resultMap id="UserMap" type="com.example.domain.User">
+         <id column="id" jdbcType="INTEGER" property="id"/>
+         <result property="name" column="name" jdbcType="VARCHAR"/>&ndash;&gt;
+         &lt;!&ndash;封装映射company表数据，user表与company表1对1关系，配置1对1的映射
+             association:用于配置1对1的映射
+                         属性property：company对象在user对象中的属性名
+                         属性javaType：company属性的java对象 类型
+                         属性column：user表中的外键引用company表
+         &ndash;&gt;
+         <association property="company" javaType="com.example.domain.Company" column="company_id">
+             <id property="id" column="companyid"></id>
+             <result property="companyName" column="companyname"></result>
+         </association>
+         &lt;!&ndash;配置1对多关系映射
+             property：在user里面的List<Account>的属性名
+             ofType:当前account表的java类型
+             column:外键
+         &ndash;&gt;
+         <collection property="accounts" ofType="com.example.domain.Account" column="user_id">
+             <id property="id" column="accountid"></id>
+             <result property="accountName" column="accountname"></result>
+         </collection>
+     </resultMap>-->
+
+    <!--
+        <select id="getAccountByUserId" resultMap="UserMap">
+            SELECT
+            u.id,u.name,c.id companyid, c.name companyname, a.id accountid,a.name accountname
+            FROM user u
+            LEFT JOIN company c on u.company_id=c.id
+            LEFT JOIN account a on u.id=a.user_id
+
+            where u.id=#{id}
+        </select>-->
+
+    <!--
+        <resultMap id="UserMap" type="com.example.domain.User">
+            <id column="id" jdbcType="INTEGER" property="id"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
+            <collection property="accounts" ofType="com.example.domain.Account" column="user_id">
+                <id property="id" column="accountid"></id>
+                <result property="accountName" column="accountname"></result>
+            </collection>
+        </resultMap>
+
+        <select id="getAccountByUserId" resultMap="UserMap">
+            SELECT
+            u.id,u.name, a.id accountid,a.name accountname
+            FROM user u
+            LEFT JOIN account a on u.id=a.user_id
+
+            where u.id=#{id}
+        </select>-->
+
+</mapper>

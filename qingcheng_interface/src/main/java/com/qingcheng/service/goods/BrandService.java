@@ -16,7 +16,9 @@ public interface BrandService {
      *
      * @return
      */
-    public List<Brand> findAll();
+    List<Brand> findAll();
+
+   /* List<Brand> findname();*/
 
 
     /**
@@ -28,7 +30,6 @@ public interface BrandService {
 
 
     public List<Brand> findList(Map<String, Object> searchMap);
-
 
     public PageResult<Brand> findPage(Map<String, Object> searchMap, int page, int size);
 

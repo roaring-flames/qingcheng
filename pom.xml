@@ -21,6 +21,7 @@
         <!---->
         <module>qingcheng_web_manager</module>
         <module>qingcheng_service_goods</module>
+        <module>generatorSql</module>
     </modules>
     <packaging>pom</packaging>
 

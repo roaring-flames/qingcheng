@@ -4,6 +4,7 @@ import com.alibaba.dubbo.config.annotation.Reference;
 import com.qingcheng.pojo.goods.Brand;
 import com.qingcheng.service.goods.BrandService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,12 +14,18 @@ import java.util.List;
 @RequestMapping("/brand")
 public class BrandController {
 
-    @Reference
+    @Reference(retries = 0, timeout = 20000)
     private BrandService brandService;
 
     @GetMapping("/findAll")
     public List<Brand> findAll(){
         return brandService.findAll();
+    }
+
+
+    @PostMapping("/findname")
+    public List<Brand> find(){
+        return brandService.findname();
     }
 
     /*@GetMapping("/findPage")
